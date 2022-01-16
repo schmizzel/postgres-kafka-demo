@@ -15,20 +15,20 @@ curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json"
 ```
 All database rows should now get synced to the kafka queue.
 
-GUI access to postgres is provided using the endpoint:
-`localhost:6969`
+GUI access to postgres is provided by pgAdmin at endpoint `localhost:6969`
 
-GUI access to kafka is provided using the endpoint: 
-`localhost:8080`
+GUI access to kafka is provided by AKHQ at endpoint `localhost:8080`
 
 ## Connect API calls
 ### Connect Version
-`curl -H "Accept:application/json" localhost:8083/`
-
+```console
+curl -H "Accept:application/json" localhost:8083/
+```
 ### Register Postgres Connector
-`curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @register-postgres.json`
-
+```console
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @register-postgres.json
+```
 ### Show registered connectors
-`curl -H "Accept:application/json" localhost:8083/connectors/`
-
-# Show 
+```console
+curl -H "Accept:application/json" localhost:8083/connectors/
+```
